@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Zadanie2</string>
+    <string name="button_true">Prawda</string>
+    <string name="button_false">Fałsz</string>
+    <string name="button_next">Następne</string>
+
+    <string name="q_java">Java jest językiem programowania </string>
+    <string name="q_gimp">Gimp jest programem graficznym </string>
+    <string name="q_photoshop">Photoshop jest darmowym programem </string>
+    <string name="q_windows">Windows jest środowiskiem stworzonym przez firmę Apple </string>
+    <string name="q_facebook">Facebook jest portalem społecznościowym </string>
+
+    <string name="correct_answer">Poprawna odpowiedź</string>
+    <string name="incorrect_answer">Niepoprawna odpowiedź</string>
+
+    <string name="result">Wynik: %1$d/%2$d</string>
+</resources>
