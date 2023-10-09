@@ -14,4 +14,7 @@
     <string name="incorrect_answer">Niepoprawna odpowiedź</string>
 
     <string name="result">Wynik: %1$d/%2$d</string>
+
+    <string name="button_hint">Pokaż</string>
+    <string name="text_view_hint">Czy na pewno chcesz zobaczyć podpowiedź?</string>
 </resources>
