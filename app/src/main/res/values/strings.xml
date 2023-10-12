@@ -15,6 +15,8 @@
 
     <string name="result">Wynik: %1$d/%2$d</string>
 
-    <string name="button_hint">Pokaż</string>
-    <string name="text_view_hint">Czy na pewno chcesz zobaczyć podpowiedź?</string>
+    <string name="button_hint">Podpowiedź</string>
+    <string name="button_answer">Pokaż</string>
+
+    <string name="answer_was_shown">Odpowiedź była już wyświetlona!</string>
 </resources>

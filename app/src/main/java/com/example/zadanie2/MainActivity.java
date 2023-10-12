@@ -1,7 +1,10 @@
 package com.example.zadanie2;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,10 +15,14 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private static final String KEY_CURRENT_INDEX = "currentIndex";
+    public static final String KEY_EXTRA_ANSWER = "com.example.zadanie2.correctAnswer";
+    private static final int REQUEST_CODE_PROMPT = 0;
     private Button trueButton;
     private Button falseButton;
     private Button nextButton;
+    private Button hintButton;
     private TextView questionTextView;
+    private boolean answerWasShown;
 
     private Question[] questions = new Question[]{
             new Question(R.string.q_java, true),
@@ -38,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
     private void checkAnswerCorrectness(boolean userAnswer){
         boolean correctAnswer = questions[currentIndex].isTrueAnswer();
         int resultMessageId = 0;
+        if (answerWasShown){
+            resultMessageId = R.string.answer_was_shown;
+        }
         if(userAnswer == correctAnswer){
             resultMessageId = R.string.correct_answer;
             score++;
@@ -56,7 +66,20 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if (resultCode != RESULT_OK) {
+            return;
+        }
+        if (requestCode == REQUEST_CODE_PROMPT) {
+            if (data == null) {
+                return;
+            }
+            answerWasShown = data.getBooleanExtra(PromptActivity.KEY_EXTRA_ANSWER_SHOWN, false);
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,11 +90,12 @@ public class MainActivity extends AppCompatActivity {
         if(savedInstanceState != null){
             currentIndex = savedInstanceState.getInt(KEY_CURRENT_INDEX);
         }
-
+        hintButton = findViewById(R.id.hint_button);
         trueButton = findViewById(R.id.true_button);
         falseButton = findViewById(R.id.false_button);
         nextButton = findViewById(R.id.next_button);
         questionTextView = findViewById(R.id.question_text_view);
+
 
         setNextQuestion();
 
@@ -81,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
         nextButton.setOnClickListener(v -> {
             currentIndex = (currentIndex + 1) % questions.length;
+            answerWasShown = false;
             if (currentIndex == 0) {
                 quizSummary();
                 score = 0;
@@ -88,6 +113,13 @@ public class MainActivity extends AppCompatActivity {
             setNextQuestion();
         });
 
+        hintButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PromptActivity.class);
+            boolean correctAnswer = questions[currentIndex].isTrueAnswer();
+            intent.putExtra(KEY_EXTRA_ANSWER, correctAnswer);
+            answerWasShown = true;
+            startActivityForResult(intent, REQUEST_CODE_PROMPT);
+        });
 
     }
 
@@ -120,4 +152,5 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.d("MainActivity", "onDestroy() wywolane");
     }
+
 }

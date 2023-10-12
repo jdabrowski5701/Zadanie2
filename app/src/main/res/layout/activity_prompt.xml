@@ -9,15 +9,20 @@
     tools:context=".PromptActivity">
 
     <TextView
-        android:id="@+id/hint_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_view_hint"/>
+        android:text="Czy chcesz zobaczyć odpowiedź?"/>
+
+    <TextView
+        android:id="@+id/answer_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Odpowiedź"/>
 
     <Button
-        android:id="@+id/hint_button"
+        android:id="@+id/answer_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_hint"/>
+        android:text="@string/button_answer"/>
 
 </LinearLayout>
