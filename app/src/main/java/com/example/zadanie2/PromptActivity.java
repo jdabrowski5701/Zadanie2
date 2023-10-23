@@ -31,10 +31,11 @@ public class PromptActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prompt);
 
+        correctAnswer = getIntent().getBooleanExtra(MainActivity.KEY_EXTRA_ANSWER, true);
         showCorrectAnswerButton = findViewById(R.id.answer_button);
         answerTextView = findViewById(R.id.answer_text_view);
 
-        correctAnswer = getIntent().getBooleanExtra(MainActivity.KEY_EXTRA_ANSWER, true);
+
 
         showCorrectAnswerButton.setOnClickListener(v -> {
             int answer = correctAnswer ? R.string.button_true : R.string.button_false;

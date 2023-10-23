@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
     private void checkAnswerCorrectness(boolean userAnswer){
         boolean correctAnswer = questions[currentIndex].isTrueAnswer();
         int resultMessageId = 0;
-        if (answerWasShown){
-            resultMessageId = R.string.answer_was_shown;
-        }
+
         if(userAnswer == correctAnswer){
             resultMessageId = R.string.correct_answer;
             score++;
         }else{
             resultMessageId = R.string.incorrect_answer;
+        } if (answerWasShown){
+            resultMessageId = R.string.answer_was_shown;
         }
         Toast.makeText(this, resultMessageId, Toast.LENGTH_SHORT).show();
     }
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, PromptActivity.class);
             boolean correctAnswer = questions[currentIndex].isTrueAnswer();
             intent.putExtra(KEY_EXTRA_ANSWER, correctAnswer);
-            answerWasShown = true;
+           // answerWasShown = true;
             startActivityForResult(intent, REQUEST_CODE_PROMPT);
         });
 
