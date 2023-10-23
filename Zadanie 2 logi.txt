@@ -1,0 +1,43 @@
+//Pierwsze uruchomienie aplikacji
+2023-10-09 12:43:46.724  6655-6655  MainActivity            com.example.zadanie2                 D  onStart() wywolane
+2023-10-09 12:43:46.726  6655-6655  MainActivity            com.example.zadanie2                 D  onResume() wywolane
+
+//Po wciśnięciu przycisku cofnij (wyjscie z aplikacji)
+2023-10-09 12:46:39.425  6655-6655  MainActivity            com.example.zadanie2                 D  onPause() wywolane
+2023-10-09 12:46:40.303  6655-6655  MainActivity            com.example.zadanie2                 D  onStop() wywolane
+
+//Usunięcie aplikacji z pamięci
+2023-10-09 12:46:40.306  6655-6655  MainActivity            com.example.zadanie2                 D  onDestroy() wywolane
+---------------------------- PROCESS ENDED (6655) for package com.example.zadanie2 ----------------------------
+
+//Ponowne uruchomienie aplikacji
+---------------------------- PROCESS STARTED (6702) for package com.example.zadanie2 ----------------------------
+2023-10-09 12:46:54.499  6702-6702  MainActivity            com.example.zadanie2                 D  onStart() wywolane
+2023-10-09 12:46:54.501  6702-6702  MainActivity            com.example.zadanie2                 D  onResume() wywolane
+
+//Wciśnięcie przycisku Home
+2023-10-09 12:46:57.994  6702-6702  MainActivity            com.example.zadanie2                 D  onPause() wywolane
+2023-10-09 12:46:58.824  6702-6702  MainActivity            com.example.zadanie2                 D  onStop() wywolane
+
+//Powrót do aplikacji z listy
+2023-10-09 12:47:04.002  6702-6702  MainActivity            com.example.zadanie2                 D  onStart() wywolane
+2023-10-09 12:47:04.003  6702-6702  MainActivity            com.example.zadanie2                 D  onResume() wywolane
+
+//Obrócenie ekranu
+2023-10-09 12:58:25.072  7072-7072  MainActivity            com.example.zadanie2                 D  onPause() wywolane
+2023-10-09 12:58:25.075  7072-7072  MainActivity            com.example.zadanie2                 D  onStop() wywolane
+2023-10-09 12:58:25.078  7072-7072  MainActivity            com.example.zadanie2                 D  onDestroy() wywolane
+2023-10-09 12:58:25.172  7072-7072  MainActivity            com.example.zadanie2                 D  onStart() wywolane
+2023-10-09 12:58:25.176  7072-7072  MainActivity            com.example.zadanie2                 D  onResume() wywolane
+
+//Obrócenie ekranu po wprowadzeniu poprawek - zapisanie stanu
+2023-10-09 13:11:36.805  7488-7488  MainActivity            com.example.zadanie2                 D  onCreate() wywolane
+2023-10-09 13:11:36.946  7488-7488  MainActivity            com.example.zadanie2                 D  onStart() wywolane
+2023-10-09 13:11:36.948  7488-7488  MainActivity            com.example.zadanie2                 D  onResume() wywolane
+2023-10-09 13:12:04.044  7488-7488  MainActivity            com.example.zadanie2                 D  onPause() wywolane
+2023-10-09 13:12:04.050  7488-7488  MainActivity            com.example.zadanie2                 D  onStop() wywolane
+2023-10-09 13:12:04.058  7488-7488  MainActivity            com.example.zadanie2                 D  onSaveInstanceState() wywolane
+2023-10-09 13:12:04.059  7488-7488  MainActivity            com.example.zadanie2                 D  onDestroy() wywolane
+2023-10-09 13:12:04.089  7488-7488  MainActivity            com.example.zadanie2                 D  onCreate() wywolane
+2023-10-09 13:12:04.149  7488-7488  MainActivity            com.example.zadanie2                 D  onStart() wywolane
+2023-10-09 13:12:04.150  7488-7488  MainActivity            com.example.zadanie2                 D  onResume() wywolane
